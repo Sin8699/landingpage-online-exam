@@ -23,4 +23,40 @@
   <div id="root"></div>
   <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+    window.doorbellOptions = {
+      "id": "12587",
+      "appKey": "A3VIZeIHC5LPPN7QoYFoBUfGgrofRKxrk6vdZIhtsl8jGqRabQfB1SGBoXdsjykM"
+    };
+    (function (w, d, t) {
+      var hasLoaded = false;
+      function l() { if (hasLoaded) { return; } hasLoaded = true; window.doorbellOptions.windowLoaded = true; var g = d.createElement(t); g.id = 'doorbellScript'; g.type = 'text/javascript'; g.async = true; g.src = 'https://embed.doorbell.io/button/' + window.doorbellOptions['id'] + '?t=' + (new Date().getTime()); (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(g); }
+      if (w.attachEvent) { w.attachEvent('onload', l); } else if (w.addEventListener) { w.addEventListener('load', l, false); } else { l(); }
+      if (d.readyState == 'complete') { l(); }
+    }(window, document, 'script'));
+  </script>
+  <script type="text/javascript">
+    function showDoorbellModal() {
+      doorbell.show(); // The doorbell object gets created by the doorbell.js script
+    }
+
+    function removeDoorbell() {
+      doorbell.remove();
+    }
+
+    function sendFromMyForm() {
+      doorbell.send(document.getElementById('myTextarea').value, 'hello@example.com', function () { alert('success'); }, function (error) { alert('Oh no! ' + error); });
+    }
+
+    function setEmailAddress() {
+      doorbell.setOption('email', 'newemail@example.com');
+    }
+
+    function hideEmailField() {
+      doorbell.setOption('hideEmail', true);
+    }
+  </script>
+
+  <button type="button" onclick="showDoorbellModal();">Show Doorbell form</button>
+  <button type="button" onclick="sendFromMyForm();">Send</button>
 </body>
