@@ -15,10 +15,42 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
   speedAsDuration: true,
 });
 
+let idInterval = null;
+
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
     setLandingPageData(JsonData);
+  }, []);
+
+  useEffect(() => {
+    idInterval = setInterval(() => {
+      const submit = document.getElementById("doorbell-submit-button");
+      if (!submit) return;
+
+      submit.addEventListener("click", () => {
+        const email = document.getElementById("doorbell-email").value;
+        const content = document.getElementById("doorbell-feedback").value;
+        fetch(
+          "https://service-deloy.eastus.cloudapp.azure.com/service/api/v1/form-contacts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              senderName: email,
+              senderEmail: email,
+              role: "none",
+              content: content,
+            }),
+          }
+        );
+      });
+
+      clearInterval(idInterval);
+      idInterval = null;
+    }, 1000);
   }, []);
 
   return (
