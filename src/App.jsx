@@ -32,7 +32,7 @@ const App = () => {
         const email = document.getElementById("doorbell-email").value;
         const content = document.getElementById("doorbell-feedback").value;
         fetch(
-          "https://service-deloy.eastus.cloudapp.azure.com/service/api/v1/form-contacts",
+          "http://20.51.241.64/api/v1/form-contacts",
           {
             method: "POST",
             headers: {
