@@ -31,21 +31,18 @@ const App = () => {
       submit.addEventListener("click", () => {
         const email = document.getElementById("doorbell-email").value;
         const content = document.getElementById("doorbell-feedback").value;
-        fetch(
-          "https://service-deloy.eastus.cloudapp.azure.com/service/api/v1/form-contacts",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              senderName: email,
-              senderEmail: email,
-              role: "none",
-              content: content,
-            }),
-          }
-        );
+        fetch("https://wiflyhomework.com/exam-api/v1/form-contract", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // senderName: email,
+            email: email,
+            // role: "none",
+            description: content,
+          }),
+        });
       });
 
       clearInterval(idInterval);
