@@ -5,14 +5,8 @@
   },
   "About": {
     "paragraph": "Là đơn vị được các Cơ sở Giáo dục trong cả nước tin dùng, phù hợp với mọi nhu cầu cho người cần tổ chức thi online hoặc ",
-    "Why": [
-      "Giao diện trực quan",
-      "Được tin cậy hàng đầu"
-    ],
-    "Why2": [
-      "Chất lượng sản phẩm tốt",
-      "Giá cạnh tranh"
-    ]
+    "Why": ["Giao diện trực quan", "Được tin cậy hàng đầu"],
+    "Why2": ["Chất lượng sản phẩm tốt", "Giá cạnh tranh"]
   },
   "Services": [
     {
@@ -91,7 +85,7 @@
     "email": "dev-devlop@online.exam.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "youtube": "https://www.youtube.com/watch?v=VBWokpyn5vo"
   },
   "Features": [
     {
